@@ -20,11 +20,17 @@ const config = {
 	authRequired: false,
 	auth0Logout: true,
 	secret: process.env.SECRET,
-	baseURL: process.env.BASE_URL,
+	baseURL:
+		process.env.NODE_ENV === 'development'
+			? 'http://localhost:8000'
+			: `${process.env.BASE_URL}`,
 	clientID: process.env.CLIENT_ID,
 	issuerBaseURL: process.env.ISSUER_BASE_URL,
 	routes: {
-		postLogoutRedirect: process.env.CLIENT_URL,
+		postLogoutRedirect:
+			process.env.NODE_ENV === 'development'
+				? 'http://localhost:3000'
+				: `${process.env.CLIENT_URL}`,
 		callback: '/callback',
 		logout: '/logout',
 		login: '/login',
