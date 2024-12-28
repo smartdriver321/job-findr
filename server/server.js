@@ -36,7 +36,7 @@ const config = {
 			domain:
 				process.env.NODE_ENV === 'development'
 					? 'localhost'
-					: 'jobfindr-q1cl.onrender.com',
+					: 'job-findr-ne6k.onrender.com',
 			secure: false,
 			sameSite: 'None',
 		},
