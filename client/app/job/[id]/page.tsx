@@ -100,7 +100,11 @@ function page() {
 								onClick={() => {
 									isAuthenticated
 										? handleLike(job._id)
-										: router.push('http://localhost:8000/login')
+										: router.push(
+												process.env.NODE_ENV === 'development'
+													? 'http://localhost:8000'
+													: `${process.env.BASE_URL}`
+										  )
 								}}
 							>
 								{isLiked ? bookmark : bookmarkEmpty}
@@ -176,7 +180,11 @@ function page() {
 									toast.error('You have already applied to this job')
 								}
 							} else {
-								router.push('http://localhost:8000/login')
+								router.push(
+									process.env.NODE_ENV === 'development'
+										? 'http://localhost:8000/login'
+										: `${process.env.BASE_URL}/login`
+								)
 							}
 						}}
 					>

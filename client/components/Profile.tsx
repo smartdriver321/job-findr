@@ -53,7 +53,11 @@ function Profile() {
 				<DropdownMenuItem
 					className='cursor-pointer'
 					onClick={() => {
-						router.push('http://localhost:8000/logout')
+						router.push(
+							process.env.NODE_ENV === 'development'
+								? 'http://localhost:8000/logout'
+								: `${process.env.BASE_URL}/logout`
+						)
 					}}
 				>
 					<LogOut className='mr-2 h-4 w-4' />

@@ -12,7 +12,11 @@ function page() {
 
 	useEffect(() => {
 		if (!loading && !isAuthenticated) {
-			router.push('http://localhost:8000/login')
+			router.push(
+				process.env.NODE_ENV === 'development'
+					? 'http://localhost:8000'
+					: `${process.env.BASE_URL}`
+			)
 		}
 	}, [isAuthenticated])
 	return (

@@ -104,7 +104,11 @@ function JobCard({ job, activeJob }: JobProps) {
 					onClick={() => {
 						isAuthenticated
 							? handleLike(job._id)
-							: router.push('http://localhost:8000/login')
+							: router.push(
+									process.env.NODE_ENV === 'development'
+										? 'http://localhost:8000/login'
+										: `${process.env.BASE_URL}/login`
+							  )
 					}}
 				>
 					{isLiked ? bookmark : bookmarkEmpty}
