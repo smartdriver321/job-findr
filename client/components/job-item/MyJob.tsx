@@ -74,7 +74,7 @@ function MyJob({ job }: JobProps) {
 							: router.push(
 									process.env.NODE_ENV === 'development'
 										? 'http://localhost:8000/login'
-										: `${process.env.BASE_URL}/login`
+										: `${process.env.REACT_APP_BASE_URL}/login`
 							  )
 					}}
 				>

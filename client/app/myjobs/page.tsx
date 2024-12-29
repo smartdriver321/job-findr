@@ -24,8 +24,8 @@ function page() {
 		if (!loading && !isAuthenticated) {
 			router.push(
 				process.env.NODE_ENV === 'development'
-					? 'http://localhost:8000'
-					: `${process.env.BASE_URL}`
+					? 'http://localhost:8000/login'
+					: `${process.env.REACT_APP_BASE_URL}/login`
 			)
 		}
 	}, [isAuthenticated])

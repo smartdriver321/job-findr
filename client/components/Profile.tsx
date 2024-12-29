@@ -56,7 +56,7 @@ function Profile() {
 						router.push(
 							process.env.NODE_ENV === 'development'
 								? 'http://localhost:8000/logout'
-								: `${process.env.BASE_URL}/logout`
+								: `${process.env.REACT_APP_BASE_URL}/logout`
 						)
 					}}
 				>

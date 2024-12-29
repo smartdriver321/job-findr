@@ -39,11 +39,8 @@ const config = {
 	session: {
 		absoluteDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
 		cookie: {
-			domain:
-				process.env.NODE_ENV === 'development'
-					? 'localhost'
-					: 'job-findr-ne6k.onrender.com',
-			secure: false,
+			domain: 'job-findr-ne6k.onrender.com',
+			secure: true,
 			sameSite: 'None',
 		},
 	},

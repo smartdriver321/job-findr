@@ -102,8 +102,8 @@ function page() {
 										? handleLike(job._id)
 										: router.push(
 												process.env.NODE_ENV === 'development'
-													? 'http://localhost:8000'
-													: `${process.env.BASE_URL}`
+													? 'http://localhost:8000login'
+													: `${process.env.REACT_APP_BASE_URL}login`
 										  )
 								}}
 							>
@@ -183,7 +183,7 @@ function page() {
 								router.push(
 									process.env.NODE_ENV === 'development'
 										? 'http://localhost:8000/login'
-										: `${process.env.BASE_URL}/login`
+										: `${process.env.REACT_APP_BASE_URL}/login`
 								)
 							}
 						}}
